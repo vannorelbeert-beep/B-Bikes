@@ -4,24 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>B-BIKES</title>
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Fugaz+One&family=Comic+Neue&family=Luckiest+Guy&family=Pangolin&family=Calibri&display=swap" rel="stylesheet">
 
   <style>
-    /* Fondo de la página con imagen */
-    body {
+    /* RESET BÁSICO */
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: 'Calibri', sans-serif;
-      line-height: 1.6;
-      color: #fff;
-      background: url("Tramun_Sea_Otter_2025.jpg") no-repeat center center;
-      background-size: cover;
-      position: relative;
-      font-size: 1.3em;
+      padding: 0;
     }
 
-    /* Overlay negro semitransparente */
+    body {
+      font-family: Calibri, sans-serif;
+      color: #fff;
+      line-height: 1.6;
+      font-size: 1.3em;
+      background: url("Tramun_Sea_Otter_2025.jpg") no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+
+    /* Overlay */
     body::before {
       content: "";
       position: fixed;
@@ -29,107 +31,77 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0,0,0,0.5);
       z-index: -1;
     }
 
-    /* Header */
+    /* HEADER */
     header {
       background: rgba(51, 51, 51, 0.8);
       color: #fff;
-      padding: 2px 0;
+      padding: 10px 0;
       text-align: center;
       position: sticky;
       top: 0;
       z-index: 10;
     }
     header h1 {
-      font-family: 'Comic Neue', cursive;
-      font-size: 3em;
-      line-height: 1.5;
-      letter-spacing: 3px;
-      margin: 0;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+      font-size: 2.5em;
+      letter-spacing: 6.5px;
     }
     header h2 {
-      font-family: 'Pangolin', sans-serif;
       font-size: 1.2em;
-      margin: 5px 0 0 0;
+      letter-spacing: 2px;
       font-weight: normal;
-      line-height: 1;
-      letter-spacing: 3px;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
     }
 
-    /* Navegación */
-    nav {
-      margin-top: 10px;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 20px;
-      text-decoration: none;
-      font-family: 'Calibri', sans-serif;
-      letter-spacing: 3px;
-      font-size: 2.2em;
-      transition: color 0.3s, transform 0.3s;
-    }
-    nav a:hover {
-      text-decoration: underline;
-      color: #00bfff;
-      transform: scale(1.1);
-    }
-
-    /* Secciones */
-    section {
+    /* SECCIONES */
+    main section {
+      background: rgba(0,0,0,0.6);
+      margin: 20px auto;
       padding: 60px 20px;
-      text-align: center;
-      background: rgba(0, 0, 0, 0.6);
-      margin: 20px;
       border-radius: 10px;
-      font-family: 'Calibri', sans-serif;
+      max-width: 1000px;
+      text-align: center;
     }
-
     section h2, section h3 {
       margin-bottom: 20px;
     }
 
-    /* Botón */
+    /* LISTAS */
+    ul li {
+      line-height: 2;
+    }
+
+    /* BOTONES */
     .btn, .btn-whatsapp {
       display: inline-block;
       padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 20px;
+      transition: background 0.3s;
+    }
+    .btn {
       background: darkblue;
       color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-top: 20px;
-      font-family: 'Calibri', sans-serif;
-      transition: background 0.3s, transform 0.3s;
     }
-    .btn:hover, .btn-whatsapp:hover {
+    .btn:hover {
       background: navy;
-      transform: scale(1.05);
     }
-
-    /* Footer */
-    footer {
-      background: rgba(51, 51, 51, 0.8);
+    .btn-whatsapp {
+      background: #25D366;
       color: #fff;
-      text-align: center;
-      padding: 15px 0;
-      margin-top: 20px;
-      font-family: 'Calibri', sans-serif;
+    }
+    .btn-whatsapp:hover {
+      background: #1ebe57;
     }
 
-    /* Mini-galería */
+    /* GALERÍA */
     .gallery {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 10px;
       margin-top: 10px;
     }
@@ -140,43 +112,41 @@
       border-radius: 8px;
       border: 2px solid #fff;
       transition: transform 0.3s, box-shadow 0.3s;
+      loading: lazy;
     }
     .gallery img:hover {
       transform: scale(1.05);
       box-shadow: 0 0 10px #000;
     }
 
-    /* Adaptación móvil */
+    /* FOOTER */
+    footer {
+      background: rgba(51, 51, 51, 0.8);
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 20px;
+    }
+
+    /* RESPONSIVE */
     @media (max-width: 600px) {
-      section {
-        padding: 40px 10px;
-        margin: 10px;
-        text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.5);
-      }
-      nav a {
-        display: block;
-        margin: 5px 0;
-      }
       header h1 {
-        font-family: 'Luckiest Guy', cursive !important;
-        font-size: 2.2em !important;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+        font-size: 2.2em;
+        letter-spacing: 2px;
       }
       header h2 {
         font-size: 1em;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
       }
-      section h2, section h3 {
-        font-size: 1.2em;
+      main section {
+        padding: 40px 10px;
+        margin: 10px;
       }
       .btn, .btn-whatsapp {
         padding: 15px 25px;
         font-size: 1em;
       }
       .gallery img {
-        width: 50%;
+        width: 100%;
         height: auto;
       }
     }
@@ -184,68 +154,65 @@
 </head>
 <body>
 
-  <!-- Encabezado -->
+  <!-- HEADER -->
   <header>
-    <h1>B-BIKES</h1>
-    <h2>Taller de Bicis</h2>    
+    <h1><em>B-BIKES</em></h1>
+    <h2>Taller de Bicis</h2>
   </header>
 
-  <!-- Sección Inicio -->
-  <section id="inicio">
-    <p>Bienvenido a B-BIKES, tu taller de bicicletas en Barcelona. Nos especializamos en reparaciones y mantenimiento de todo tipo de bicicletas.</p>
+  <main>
+    <!-- SECCIÓN INICIO -->
+    <section id="inicio">
+      <p>Bienvenido a B-BIKES, tu taller de bicicletas en Barcelona y alrededores. Nos especializamos en reparaciones y mantenimiento de todo tipo de bicicletas.</p>
 
-    <div style="margin-top: 30px;">
-      <h3>Servicios destacados</h3>
-      <ul style="list-style: none; padding: 0; line-height: 2;">
-        <li>🔧 Reparación y mantenimiento de bicicletas</li>
-        <li>🛠 Ajustes personalizados y tuning de bicicletas</li>
-        <li>⚡ Asesoramiento en rutas y equipamiento</li>
-      </ul>
-    </div>
-
-    <div style="margin-top: 30px;">
-      <h3>Galería</h3>
-      <div class="gallery">
-        <img src="5404246.avif" alt="Bicicleta 1">
-        <img src="intense_sniper_fro.jpg" alt="Bicicleta 2">
+      <div style="margin-top: 30px;">
+        <h3>Servicios destacados</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li>🔧 Reparación y mantenimiento de bicicletas</li>
+          <li>🛠 Ajustes personalizados y tuning de bicicletas</li>
+          <li>⚡ Recogemos tu bicicleta y te la llevamos de vuelta a casa.</li>
+        </ul>
       </div>
-    </div>
 
-    <div style="margin-top: 30px;">
-      <h3>Horario de atención</h3>
-      <p>Lunes a Viernes: 9:00 - 19:00</p>
-      <p>Sábado: 10:00 - 14:00</p>
-      <p>Domingo: Cerrado</p>
-    </div>
+      <div style="margin-top: 30px;">
+        <h3>Galería</h3>
+        <div class="gallery">
+          <img src="5404246.avif" alt="Bicicleta 1" loading="lazy">
+          <img src="intense_sniper_fro.jpg" alt="Bicicleta 2" loading="lazy">
+        </div>
+      </div>
 
-    <a href="#contacto" class="btn">Contáctame</a>
-  </section>
+      <div style="margin-top: 30px;">
+        <h3>Horario de atención</h3>
+        <p>Lunes a Viernes: 9:00 - 19:00</p>
+        <p>Sábado: 10:00 - 14:00</p>
+        <p>Domingo: Cerrado</p>
+      </div>
 
-  <!-- Sección Sobre mí -->
-  <section id="sobre">
-    <h2>Sobre mí</h2>
-    <p>Como holandés, el ciclismo forma parte de mi transporte diario. Desde 1993 trabajo con todo tipo de bicicletas, pero especialmente con bicicletas de montaña.</p>
-  </section>
+      <a href="#contacto" class="btn">Contáctame</a>
+    </section>
 
-  <!-- Sección Contacto -->
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p>Envíame un mensaje a <strong>bbikesbarcelona@gmail.com</strong></p>
-    <p>O llámanos al <strong>696 269 171</strong></p>
-    <!-- Botón WhatsApp -->
-    <a href="https://wa.me/34696269171" class="btn-whatsapp" target="_blank">
-      💬 Escríbenos por WhatsApp
-    </a>
-  </section>
+    <!-- SECCIÓN SOBRE MÍ -->
+    <section id="sobre">
+      <h2>Sobre mí</h2>
+      <p>Como holandés, el ciclismo forma parte de mi transporte diario. Desde 1993 trabajo con todo tipo de bicicletas, pero especialmente con bicicletas de montaña.</p>
+    </section>
 
-  <!-- Footer -->
+    <!-- SECCIÓN CONTACTO -->
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <p>Envíame un mensaje a <strong>bbikesbarcelona@gmail.com</strong></p>
+      <p>O llámanos al <strong>666 540 675</strong></p>
+      <a href="https://wa.me/34666540675" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+        💬 Escríbenos por WhatsApp
+      </a>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
   <footer>
     <p>2025 B-BIKES - web design bnori</p>
   </footer>
 
 </body>
 </html>
-
-
-
-
