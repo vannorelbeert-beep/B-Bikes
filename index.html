@@ -145,10 +145,12 @@
     }
 
     /* RESPONSIVE */
-    @media (max-width: 600px) {
+
+      @media (max-width: 600px) {
       body {
-        background: url("fondo-movil.jpg") no-repeat center center fixed;
-        background-size: cover;
+      background: url("fondo-movil.jpg") no-repeat center center;
+      background-size: cover;
+      background-attachment: scroll; /* ✅ Evita el bug en móviles */
       }
 
       body::before {
