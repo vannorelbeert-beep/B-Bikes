@@ -50,7 +50,7 @@
       text-shadow:
       2px 2px 0 #000,
       4px 4px 0 #555,
-      6px 6px 0 #888; /* Multiple shadows to create depth */     
+      6px 6px 0 #888;
       letter-spacing: 6.5px;
     }
     header h2 {
@@ -102,37 +102,29 @@
     }
 
     /* GALERÍA */
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 10px;
-}
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
 
-.gallery img {
-  width: 250px;
-  max-width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 8px;
-  border: 2px solid #fff;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
+    .gallery img {
+      width: 250px;
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 2px solid #fff;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
 
-/* Efecto hover */
-.gallery img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px #000;
-}
-
-/* Adaptación móvil */
-@media (max-width: 600px) {
-  .gallery img {
-    width: 100%;
-    height: auto;
-  }
-}
+    /* Efecto hover */
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #000;
+    }
 
     /* FOOTER */
     footer {
@@ -145,6 +137,15 @@
 
     /* RESPONSIVE */
     @media (max-width: 600px) {
+      body {
+        background: url("fondo-movil.jpg") no-repeat center center fixed;
+        background-size: cover;
+      }
+
+      body::before {
+        background: rgba(0,0,0,0.25); /* overlay más suave */
+      }
+
       header h1 {
         font-size: 2.2em;
         letter-spacing: 2px;
@@ -186,8 +187,10 @@
           <li>🔧 Reparación y mantenimiento de bicicletas</li>
           <li>🛠 Ajustes personalizados y tuning de bicicletas</li>
           <li>⚡ Recogemos tu bicicleta y te la llevamos de vuelta a casa.</li>
-              <div style="margin-top: 30px;">
-        
+        </ul>
+      </div>
+
+      <div style="margin-top: 30px;">
         <h3>Galería</h3>
         <div class="gallery">
           <img src="werkplaats-bongersbikes-01.jpg" alt="Bicicleta 1" loading="lazy">
