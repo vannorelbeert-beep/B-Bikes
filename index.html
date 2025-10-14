@@ -18,19 +18,9 @@
       color: #fff;
       line-height: 1.6;
       font-size: 1.3em;
-      background: #000 url("Tramun_Sea_Otter_2025.jpg") no-repeat center center;
+      background: url("Tramun_Sea_Otter_2025.jpg") no-repeat center center fixed;
       background-size: cover;
-      background-attachment: fixed;
-      min-height: 100vh;
       position: relative;
-      transition: background-image 0.5s ease-in-out;
-    }
-
-    /* Evita el bug en navegadores móviles */
-    @supports (-webkit-touch-callout: none) {
-      body {
-        background-attachment: scroll !important;
-      }
     }
 
     /* Overlay */
@@ -55,16 +45,14 @@
       top: 0;
       z-index: 10;
     }
-
     header h1 {
       font-size: 2.5em;
       text-shadow:
-        2px 2px 0 #000,
-        4px 4px 0 #555,
-        6px 6px 0 #888;
+      2px 2px 0 #000,
+      4px 4px 0 #555,
+      6px 6px 0 #888;
       letter-spacing: 6.5px;
     }
-
     header h2 {
       font-size: 1.2em;
       letter-spacing: 2px;
@@ -80,7 +68,6 @@
       max-width: 1000px;
       text-align: center;
     }
-
     section h2, section h3 {
       margin-bottom: 20px;
     }
@@ -99,21 +86,17 @@
       margin-top: 20px;
       transition: background 0.3s;
     }
-
     .btn {
       background: darkblue;
       color: #fff;
     }
-
     .btn:hover {
       background: navy;
     }
-
     .btn-whatsapp {
       background: #25D366;
       color: #fff;
     }
-
     .btn-whatsapp:hover {
       background: #1ebe57;
     }
@@ -164,9 +147,8 @@
     /* RESPONSIVE */
     @media (max-width: 600px) {
       body {
-        background: #000 url("fondo-movil.jpg") no-repeat center center;
+        background: url("fondo-movil.jpg") no-repeat center center fixed;
         background-size: cover;
-        background-attachment: scroll !important; /* ✅ asegura carga en móvil */
       }
 
       body::before {
@@ -177,26 +159,21 @@
         font-size: 2.2em;
         letter-spacing: 2px;
       }
-
       header h2 {
         font-size: 1em;
       }
-
       main section {
         padding: 40px 10px;
         margin: 10px;
       }
-
       .btn, .btn-whatsapp {
         padding: 15px 25px;
         font-size: 1em;
       }
-
       .gallery img {
         width: 100%;
         height: auto;
       }
-
       .about-img {
         width: 70%;
       }
@@ -254,8 +231,8 @@
     <section id="contacto">
       <h2>Contacto</h2>
       <p>Envíanos un mensaje a <strong>bbikesbarcelona@gmail.com</strong></p>
-      <p>O llámanos al <strong>666 540 675</strong></p>
-      <a href="https://wa.me/34666540675" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+      <p>O llámanos al <strong>696 26 91 71</strong></p>
+      <a href="https://wa.me/34696269171" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
         💬 Escríbenos por WhatsApp
       </a>
 
@@ -274,19 +251,6 @@
   <footer>
     <p>2025 B-BIKES - web design bnori</p>
   </footer>
-
-  <!-- Precarga del fondo -->
-  <script>
-    // Precarga para evitar que el fondo tarde en mostrarse en móviles
-    document.addEventListener("DOMContentLoaded", function() {
-      const fondo = new Image();
-      const isMobile = window.matchMedia("(max-width: 600px)").matches;
-      fondo.src = isMobile ? "fondo-movil.jpg" : "Tramun_Sea_Otter_2025.jpg";
-      fondo.onload = function() {
-        document.body.style.backgroundImage = `url('${fondo.src}')`;
-      };
-    });
-  </script>
 
 </body>
 </html>
