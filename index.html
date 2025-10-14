@@ -120,10 +120,19 @@
       transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    /* Efecto hover */
     .gallery img:hover {
       transform: scale(1.05);
       box-shadow: 0 0 10px #000;
+    }
+
+    /* IMAGEN SOBRE MÍ */
+    .about-img {
+      margin-top: 25px;
+      width: 200px;
+      height: auto;
+      border-radius: 10px;
+      border: 2px solid #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.6);
     }
 
     /* FOOTER */
@@ -143,7 +152,7 @@
       }
 
       body::before {
-        background: rgba(0,0,0,0.25); /* overlay más suave */
+        background: rgba(0,0,0,0.25);
       }
 
       header h1 {
@@ -164,6 +173,9 @@
       .gallery img {
         width: 100%;
         height: auto;
+      }
+      .about-img {
+        width: 70%;
       }
     }
   </style>
@@ -212,6 +224,7 @@
     <section id="sobre">
       <h2>Sobre mí</h2>
       <p>Como holandés, el ciclismo forma parte de mi transporte diario. Desde 1993 trabajo con todo tipo de bicicletas, pero especialmente con bicicletas de montaña.</p>
+      <img src="sobre-mi.jpg" alt="Foto sobre mí" class="about-img">
     </section>
 
     <!-- SECCIÓN CONTACTO -->
