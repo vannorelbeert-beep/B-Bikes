@@ -142,6 +142,11 @@
       text-align: center;
       padding: 15px 0;
       margin-top: 20px;
+      font-size: 0.9em;
+    }
+    #contador {
+      font-weight: bold;
+      color: #00ffcc;
     }
 
     /* RESPONSIVE */
@@ -250,7 +255,22 @@
   <!-- FOOTER -->
   <footer>
     <p>2025 B-BIKES - web design bnori</p>
+    <p>👁️ Visitas totales: <span id="contador">0</span></p>
   </footer>
+
+  <!-- SCRIPT CONTADOR -->
+  <script>
+    const NOMBRE_UNICO = "bbikes-2025"; // cambia este nombre si usas el contador en otra web
+    fetch(`https://api.countapi.xyz/hit/${NOMBRE_UNICO}/visitas`)
+      .then(res => res.json())
+      .then(res => {
+        document.getElementById("contador").textContent = res.value;
+      })
+      .catch(err => {
+        console.error("Error al obtener el contador:", err);
+        document.getElementById("contador").textContent = "Error";
+      });
+  </script>
 
 </body>
 </html>
