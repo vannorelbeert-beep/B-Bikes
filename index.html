@@ -255,22 +255,12 @@
   <!-- FOOTER -->
   <footer>
     <p>2025 B-BIKES - web design bnori</p>
-    <p>👁️ Visitas totales: <span id="contador">0</span></p>
+
+  <!-- Contador embebido -->
+  <div id="miContador">
+    <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/123456/t/0"></script>
+  </div>
   </footer>
 
-  <!-- SCRIPT CONTADOR -->
-  <script>
-    const NOMBRE_UNICO = "bbikes-2025"; // cambia este nombre si usas el contador en otra web
-    fetch(`https://api.countapi.xyz/hit/${NOMBRE_UNICO}/visitas`)
-      .then(res => res.json())
-      .then(res => {
-        document.getElementById("contador").textContent = res.value;
-      })
-      .catch(err => {
-        console.error("Error al obtener el contador:", err);
-        document.getElementById("contador").textContent = "Error";
-      });
-  </script>
-
 </body>
-</html>
+</html> 
