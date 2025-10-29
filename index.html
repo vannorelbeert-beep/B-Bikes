@@ -125,6 +125,55 @@
       box-shadow: 0 0 10px #000;
     }
 
+    /* TARJETAS DE SERVICIOS */
+    .services-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .service-card {
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid #fff;
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 400px;
+      color: #fff;
+      text-align: left;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .service-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 10px #000;
+    }
+
+    .service-card h4 {
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 1.4em;
+      color: #00ffcc;
+    }
+
+    .service-card ul {
+      list-style: none;
+      padding-left: 10px;
+    }
+
+    .service-card ul li::before {
+      content: "✔ ";
+      color: #00ffcc;
+    }
+
+    /* FRASE FINAL PACKS */
+    .material-note {
+      margin-top: 30px;
+      font-style: italic;
+      color: #ccc;
+    }
+
     /* IMAGEN SOBRE MÍ */
     .about-img {
       margin-top: 25px;
@@ -146,36 +195,12 @@
 
     /* RESPONSIVE */
     @media (max-width: 600px) {
-      body {
-        background: url("fondo-movil.jpg") no-repeat center center fixed;
-        background-size: cover;
+      .services-cards {
+        flex-direction: column;
+        align-items: center;
       }
-
-      body::before {
-        background: rgba(0,0,0,0.25);
-      }
-
-      header h1 {
-        font-size: 2.2em;
-        letter-spacing: 2px;
-      }
-      header h2 {
-        font-size: 1em;
-      }
-      main section {
-        padding: 40px 10px;
-        margin: 10px;
-      }
-      .btn, .btn-whatsapp {
-        padding: 15px 25px;
-        font-size: 1em;
-      }
-      .gallery img {
-        width: 100%;
-        height: auto;
-      }
-      .about-img {
-        width: 70%;
+      .service-card {
+        width: 90%;
       }
     }
   </style>
@@ -202,7 +227,7 @@
         </ul>
       </div>
 
-      <div style="margin-top: 30px;">
+      <div style="margin-top: 50px;">
         <h3>Galería</h3>
         <div class="gallery">
           <img src="werkplaats-bongersbikes-01.jpg" alt="Bicicleta 1" loading="lazy">
@@ -225,6 +250,97 @@
       <h2>Sobre mí</h2>
       <p>Como holandés, el ciclismo forma parte de mi transporte diario. Desde 1993 trabajo con todo tipo de bicicletas, pero especialmente con bicicletas de montaña.</p>
       <img src="sobre-mi.jpg" alt="Foto sobre mí" class="about-img">
+    </section>
+
+    <!-- SECCIÓN TARIFAS -->
+    <section id="tarifas">
+      <h2>Tarifas</h2>
+      <p>En B-BIKES ofrecemos precios justos y transparentes para todos nuestros servicios.</p>
+
+      <table style="margin: 30px auto; border-collapse: collapse; width: 90%; max-width: 700px; color: #fff;">
+        <thead>
+          <tr style="background: rgba(255,255,255,0.2);">
+            <th style="padding: 15px; border: 1px solid #fff;">Servicio</th>
+            <th style="padding: 15px; border: 1px solid #fff;">Precio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 12px; border: 1px solid #fff;">Pack Mantenimiento Básico</td>
+            <td style="padding: 12px; border: 1px solid #fff;">40€, E-Bike 50€</td>
+          </tr>
+          <tr>
+            <td style="padding: 12px; border: 1px solid #fff;">Pack Mantenimiento General</td>
+            <td style="padding: 12px; border: 1px solid #fff;">80€, E-Bike 90€</td>
+          </tr>
+          <tr>
+            <td style="padding: 12px; border: 1px solid #fff;">Pack Mantenimiento Completo</td>
+            <td style="padding: 12px; border: 1px solid #fff;">120€, E-Bike 145€</td>
+          </tr>
+          <tr>
+            <td style="padding: 12px; border: 1px solid #fff;">Recogida y entrega a domicilio</td>
+            <td style="padding: 12px; border: 1px solid #fff;">23€ (Barcelona ciudad)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <a href="#contacto" class="btn">Solicita tu presupuesto</a>
+    </section>
+
+    <!-- PACKS DE MANTENIMIENTO -->
+    <section id="packs">
+      <h2>Packs de Mantenimiento*</h2>
+      <div class="services-cards">
+        <!-- PACK BÁSICO -->
+        <div class="service-card">
+          <h4>Pack Mantenimiento Básico</h4>
+          <ul>
+            <li>Inspección de seguridad</li>
+            <li>Apriete de tornillería</li>
+            <li>Revisión y ajuste de cambios</li>
+            <li>Revisión y ajuste de frenos (sin sangrado)</li>
+            <li>Revisión y ajuste de holguras (pedalier, ruedas, dirección)</li>
+            <li>Revisión e inflado de neumáticos</li>
+            <li>Prueba en marcha de la bicicleta</li>
+          </ul>
+        </div>
+
+        <!-- PACK GENERAL -->
+        <div class="service-card">
+          <h4>Pack Mantenimiento General</h4>
+          <ul>
+            <li>Todas las tareas del Pack Básico</li>
+            <li>Limpieza y desengrasado de la transmisión</li>
+            <li>Lubricado de transmisión</li>
+            <li>Lubricado de cables y fundas</li>
+            <li>Revisión y ajuste de frenos con sangrado</li>
+            <li>Limpieza y engrasado de dirección</li>
+            <li>Limpieza y engrasado de pedalier</li>
+            <li>Limpieza y engrasado de tija de sillín</li>
+            <li>Ajuste de presiones de suspensiones</li>
+            <li>Prueba en marcha de la bicicleta</li>
+          </ul>
+        </div>
+
+        <!-- PACK COMPLETO -->
+        <div class="service-card">
+          <h4>Pack Mantenimiento Completo</h4>
+          <ul>
+            <li>Todas las tareas del Pack Mantenimiento General</li>
+            <li>Desengrasar y lavar cadena con ultrasonidos</li>
+            <li>Desengrasar y lavar cassette con ultrasonidos</li>
+            <li>Desmontar, lavar y engrasar cambio y desviador</li>
+            <li>Desengrasar y lavar roldanas con ultrasonidos</li>
+            <li>Limpieza y engrasado de núcleo y rodamientos</li>
+            <li>Cambio de cables de desviador y cambio (material incluido)</li>
+            <li>Centrado de ruedas</li>
+            <li>Limpieza y encerado de cuadro</li>
+            <li>Prueba en marcha de la bicicleta</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="material-note">* Material no incluido</p>
     </section>
 
     <!-- SECCIÓN CONTACTO -->
@@ -259,7 +375,4 @@
   </footer>
 
 </body>
-
 </html>
-
-
