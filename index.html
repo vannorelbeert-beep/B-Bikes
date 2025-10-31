@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -229,7 +229,7 @@
     @media (max-width: 768px) {
       /* Fondo alternativo para móviles */
       body {
-        background: url("fondo-movil.jpg") no-repeat center center fixed;
+        background: url("fondo-movil-bbikes.jpg") no-repeat center center fixed;
         background-size: cover;
       }
 
@@ -242,21 +242,44 @@
         width: 90%;
       }
 
-      table, thead, tbody, th, td, tr {
-        display: block;
+      /* TABLA RESPONSIVE */
+      table {
+        width: 100%;
       }
 
-      td, th {
-        text-align: right;
+      thead {
+        display: none;
+      }
+
+      tbody tr {
+        display: block;
+        margin-bottom: 15px;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        padding: 10px;
+      }
+
+      td {
+        display: block;
+        text-align: left;
         padding-left: 50%;
         position: relative;
+        border: none;
+        border-bottom: 1px solid #fff;
       }
 
-      td::before, th::before {
+      td::before {
+        content: attr(data-label);
         position: absolute;
         left: 10px;
-        width: 45%;
+        top: 12px;
+        font-weight: bold;
+        color: #00ffcc;
         white-space: nowrap;
+      }
+
+      td:last-child {
+        border-bottom: 0;
       }
     }
   </style>
@@ -321,10 +344,22 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>Pack Mantenimiento Básico</td><td>40€, E-Bike 50€</td></tr>
-          <tr><td>Pack Mantenimiento General</td><td>80€, E-Bike 90€</td></tr>
-          <tr><td>Pack Mantenimiento Completo</td><td>120€, E-Bike 145€</td></tr>
-          <tr><td>Recogida y entrega a domicilio</td><td>23€ (Barcelona ciudad)</td></tr>
+          <tr>
+            <td data-label="Servicio">Pack Mantenimiento Básico</td>
+            <td data-label="Precio">40€, E-Bike 50€</td>
+          </tr>
+          <tr>
+            <td data-label="Servicio">Pack Mantenimiento General</td>
+            <td data-label="Precio">80€, E-Bike 90€</td>
+          </tr>
+          <tr>
+            <td data-label="Servicio">Pack Mantenimiento Completo</td>
+            <td data-label="Precio">120€, E-Bike 145€</td>
+          </tr>
+          <tr>
+            <td data-label="Servicio">Recogida y entrega a domicilio</td>
+            <td data-label="Precio">23€ (Barcelona ciudad)</td>
+          </tr>
         </tbody>
       </table>
 
