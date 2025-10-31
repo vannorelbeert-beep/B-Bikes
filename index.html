@@ -3,7 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>B-BIKES</title>
+  <title>B-BIKES | Taller de Bicicletas en Barcelona</title>
+
+  <!-- SEO -->
+  <meta name="description" content="B-BIKES - Taller de bicicletas en Barcelona. Reparaciones, mantenimiento y personalización de bicis urbanas, MTB y E-bikes.">
+  <meta name="keywords" content="taller bicicletas Barcelona, mantenimiento bicis, reparación bicicletas, B-BIKES">
+  <meta name="author" content="B-BIKES">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
 
   <style>
     /* RESET BÁSICO */
@@ -21,6 +29,7 @@
       background: url("Tramun_Sea_Otter_2025.jpg") no-repeat center center fixed;
       background-size: cover;
       position: relative;
+      transition: background 0.5s ease-in-out;
     }
 
     /* Overlay */
@@ -31,7 +40,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.4);
+      background: rgba(0,0,0,0.5);
       z-index: -1;
     }
 
@@ -45,14 +54,16 @@
       top: 0;
       z-index: 10;
     }
+
     header h1 {
       font-size: 2.5em;
       text-shadow:
-      2px 2px 0 #000,
-      4px 4px 0 #555,
-      6px 6px 0 #888;
+        2px 2px 0 #000,
+        4px 4px 0 #555,
+        6px 6px 0 #888;
       letter-spacing: 6.5px;
     }
+
     header h2 {
       font-size: 1.2em;
       letter-spacing: 2px;
@@ -61,18 +72,18 @@
 
     /* SECCIONES */
     main section {
-      background: rgba(0,0,0,0.6);
+      background: rgba(0,0,0,0.7);
       margin: 20px auto;
       padding: 60px 20px;
       border-radius: 10px;
       max-width: 1000px;
       text-align: center;
     }
+
     section h2, section h3 {
       margin-bottom: 20px;
     }
 
-    /* LISTAS */
     ul li {
       line-height: 2;
     }
@@ -86,17 +97,21 @@
       margin-top: 20px;
       transition: background 0.3s;
     }
+
     .btn {
       background: darkblue;
       color: #fff;
     }
+
     .btn:hover {
       background: navy;
     }
+
     .btn-whatsapp {
       background: #25D366;
       color: #fff;
     }
+
     .btn-whatsapp:hover {
       background: #1ebe57;
     }
@@ -167,7 +182,6 @@
       color: #00ffcc;
     }
 
-    /* FRASE FINAL PACKS */
     .material-note {
       margin-top: 30px;
       font-style: italic;
@@ -184,6 +198,24 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.6);
     }
 
+    /* TABLA TARIFAS */
+    table {
+      margin: 30px auto;
+      border-collapse: collapse;
+      width: 90%;
+      max-width: 700px;
+      color: #fff;
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #fff;
+    }
+
+    thead tr {
+      background: rgba(255,255,255,0.2);
+    }
+
     /* FOOTER */
     footer {
       background: rgba(51, 51, 51, 0.8);
@@ -193,14 +225,38 @@
       margin-top: 20px;
     }
 
-    /* RESPONSIVE */
-    @media (max-width: 600px) {
+    /* --- RESPONSIVE --- */
+    @media (max-width: 768px) {
+      /* Fondo alternativo para móviles */
+      body {
+        background: url("fondo-movil.jpg") no-repeat center center fixed;
+        background-size: cover;
+      }
+
       .services-cards {
         flex-direction: column;
         align-items: center;
       }
+
       .service-card {
         width: 90%;
+      }
+
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      td, th {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+      }
+
+      td::before, th::before {
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        white-space: nowrap;
       }
     }
   </style>
@@ -216,22 +272,22 @@
   <main>
     <!-- SECCIÓN INICIO -->
     <section id="inicio">
-      <p>Bienvenido a B-BIKES, tu taller de bicicletas en Barcelona y alrededores. Nos especializamos en reparaciones y mantenimiento de todo tipo de bicicletas.</p>
+      <p>Bienvenido a <strong>B-BIKES</strong>, tu taller de bicicletas en Barcelona y alrededores. Nos especializamos en reparaciones y mantenimiento de todo tipo de bicicletas.</p>
 
       <div style="margin-top: 30px;">
         <h3>Servicios destacados</h3>
         <ul style="list-style: none; padding: 0;">
           <li>🔧 Reparación y mantenimiento de bicicletas</li>
           <li>🛠 Ajustes personalizados y tuning de bicicletas</li>
-          <li>⚡ Recogemos tu bicicleta y te la llevamos de vuelta a casa.</li>
+          <li>⚡ Recogemos tu bicicleta y te la llevamos de vuelta a casa</li>
         </ul>
       </div>
 
       <div style="margin-top: 50px;">
         <h3>Galería</h3>
         <div class="gallery">
-          <img src="werkplaats-bongersbikes-01.jpg" alt="Bicicleta 1" loading="lazy">
-          <img src="BikeTypes_2024.jpg" alt="Bicicleta 2" loading="lazy">
+          <img src="werkplaats-bongersbikes-01.jpg" alt="Taller de bicicletas B-BIKES" loading="lazy">
+          <img src="BikeTypes_2024.jpg" alt="Tipos de bicicletas en exposición B-BIKES" loading="lazy">
         </div>
       </div>
 
@@ -249,7 +305,7 @@
     <section id="sobre">
       <h2>Sobre mí</h2>
       <p>Como holandés, el ciclismo forma parte de mi transporte diario. Desde 1993 trabajo con todo tipo de bicicletas, pero especialmente con bicicletas de montaña.</p>
-      <img src="sobre-mi.jpg" alt="Foto sobre mí" class="about-img">
+      <img src="sobre-mi.jpg" alt="Foto del mecánico y propietario de B-BIKES" class="about-img">
     </section>
 
     <!-- SECCIÓN TARIFAS -->
@@ -257,30 +313,18 @@
       <h2>Tarifas</h2>
       <p>En B-BIKES ofrecemos precios justos y transparentes para todos nuestros servicios.</p>
 
-      <table style="margin: 30px auto; border-collapse: collapse; width: 90%; max-width: 700px; color: #fff;">
+      <table>
         <thead>
-          <tr style="background: rgba(255,255,255,0.2);">
-            <th style="padding: 15px; border: 1px solid #fff;">Servicio</th>
-            <th style="padding: 15px; border: 1px solid #fff;">Precio</th>
+          <tr>
+            <th>Servicio</th>
+            <th>Precio</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td style="padding: 12px; border: 1px solid #fff;">Pack Mantenimiento Básico</td>
-            <td style="padding: 12px; border: 1px solid #fff;">40€, E-Bike 50€</td>
-          </tr>
-          <tr>
-            <td style="padding: 12px; border: 1px solid #fff;">Pack Mantenimiento General</td>
-            <td style="padding: 12px; border: 1px solid #fff;">80€, E-Bike 90€</td>
-          </tr>
-          <tr>
-            <td style="padding: 12px; border: 1px solid #fff;">Pack Mantenimiento Completo</td>
-            <td style="padding: 12px; border: 1px solid #fff;">120€, E-Bike 145€</td>
-          </tr>
-          <tr>
-            <td style="padding: 12px; border: 1px solid #fff;">Recogida y entrega a domicilio</td>
-            <td style="padding: 12px; border: 1px solid #fff;">23€ (Barcelona ciudad)</td>
-          </tr>
+          <tr><td>Pack Mantenimiento Básico</td><td>40€, E-Bike 50€</td></tr>
+          <tr><td>Pack Mantenimiento General</td><td>80€, E-Bike 90€</td></tr>
+          <tr><td>Pack Mantenimiento Completo</td><td>120€, E-Bike 145€</td></tr>
+          <tr><td>Recogida y entrega a domicilio</td><td>23€ (Barcelona ciudad)</td></tr>
         </tbody>
       </table>
 
@@ -291,7 +335,6 @@
     <section id="packs">
       <h2>Packs de Mantenimiento*</h2>
       <div class="services-cards">
-        <!-- PACK BÁSICO -->
         <div class="service-card">
           <h4>Pack Mantenimiento Básico</h4>
           <ul>
@@ -299,43 +342,37 @@
             <li>Apriete de tornillería</li>
             <li>Revisión y ajuste de cambios</li>
             <li>Revisión y ajuste de frenos (sin sangrado)</li>
-            <li>Revisión y ajuste de holguras (pedalier, ruedas, dirección)</li>
+            <li>Revisión y ajuste de holguras</li>
             <li>Revisión e inflado de neumáticos</li>
-            <li>Prueba en marcha de la bicicleta</li>
+            <li>Prueba en marcha</li>
           </ul>
         </div>
 
-        <!-- PACK GENERAL -->
         <div class="service-card">
           <h4>Pack Mantenimiento General</h4>
           <ul>
             <li>Todas las tareas del Pack Básico</li>
             <li>Limpieza y desengrasado de la transmisión</li>
-            <li>Lubricado de transmisión</li>
-            <li>Lubricado de cables y fundas</li>
+            <li>Lubricado de transmisión y cables</li>
             <li>Revisión y ajuste de frenos con sangrado</li>
-            <li>Limpieza y engrasado de dirección</li>
-            <li>Limpieza y engrasado de pedalier</li>
-            <li>Limpieza y engrasado de tija de sillín</li>
-            <li>Ajuste de presiones de suspensiones</li>
-            <li>Prueba en marcha de la bicicleta</li>
+            <li>Limpieza y engrase de dirección y pedalier</li>
+            <li>Limpieza y engrase de tija de sillín</li>
+            <li>Ajuste de suspensiones</li>
+            <li>Prueba en marcha</li>
           </ul>
         </div>
 
-        <!-- PACK COMPLETO -->
         <div class="service-card">
           <h4>Pack Mantenimiento Completo</h4>
           <ul>
-            <li>Todas las tareas del Pack Mantenimiento General</li>
-            <li>Desengrasar y lavar cadena con ultrasonidos</li>
-            <li>Desengrasar y lavar cassette con ultrasonidos</li>
+            <li>Todas las tareas del Pack General</li>
+            <li>Limpieza por ultrasonidos de cadena, cassette y roldanas</li>
             <li>Desmontar, lavar y engrasar cambio y desviador</li>
-            <li>Desengrasar y lavar roldanas con ultrasonidos</li>
-            <li>Limpieza y engrasado de núcleo y rodamientos</li>
-            <li>Cambio de cables de desviador y cambio (material incluido)</li>
+            <li>Engrase de núcleo y rodamientos</li>
+            <li>Cambio de cables de cambio y desviador (material incluido)</li>
             <li>Centrado de ruedas</li>
-            <li>Limpieza y encerado de cuadro</li>
-            <li>Prueba en marcha de la bicicleta</li>
+            <li>Limpieza y encerado del cuadro</li>
+            <li>Prueba final en marcha</li>
           </ul>
         </div>
       </div>
@@ -354,25 +391,20 @@
 
       <br><br>
 
-      <a href="https://g.page/r/CUJwZX4xVgfvEBM/review"
-      class="btn"
-      target="_blank"
-      rel="noopener noreferrer">
-     ⭐ Deja tu reseña en <strong>Google</strong>
-     </a>
+      <a href="https://g.page/r/CUJwZX4xVgfvEBM/review" class="btn" target="_blank" rel="noopener noreferrer">
+        ⭐ Deja tu reseña en <strong>Google</strong>
+      </a>
     </section>
   </main>
 
   <!-- FOOTER -->
   <footer>
-    <p>
-    2025 B-BIKES - web design bnori&nbsp;
-    <a href='https://www.free-counters.org/' target="_blank" rel="noopener noreferrer" style="color:#00ffcc; text-decoration:none;">
-         </a>
-    <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=a181e6fd21d26a1aa44bb0a3e3fe7fd80d47ae91'></script>
-    <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1413452/t/5"></script>
-  </p>
+    <p>2025 B-BIKES - web design bnori</p>
   </footer>
+
+  <!-- Scripts externos (carga optimizada) -->
+  <script async src="https://www.freevisitorcounters.com/auth.php?id=a181e6fd21d26a1aa44bb0a3e3fe7fd80d47ae91"></script>
+  <script async src="https://www.freevisitorcounters.com/en/home/counter/1413452/t/5"></script>
 
 </body>
 </html>
