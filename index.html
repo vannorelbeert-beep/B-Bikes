@@ -198,23 +198,45 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.6);
     }
 
-    /* TABLA TARIFAS */
-    table {
+    /* --- Tabla responsive mejorada --- */
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
       margin: 30px auto;
-      border-collapse: collapse;
-      width: 90%;
-      max-width: 700px;
-      color: #fff;
     }
 
-    th, td {
-      padding: 12px;
-      border: 1px solid #fff;
+    .table-container table {
+     width: 100%;
+     border-collapse: collapse;
+     color: #fff;
+     font-size: 1em;
+     min-width: 380px; /* evita romper estructura */
     }
 
-    thead tr {
-      background: rgba(255,255,255,0.2);
+    .table-container th,
+    .table-container td {
+     padding: 12px 10px;
+     border: 1px solid #fff;
+     text-align: left;
+     white-space: nowrap; /* evita cortes feos en textos */
     }
+
+    .table-container thead {
+     background: rgba(255,255,255,0.2);
+    }
+
+    /* En pantallas pequeñas, los textos se adaptan */
+    @media (max-width: 600px) {
+    .table-container table {
+     font-size: 0.9em;
+    }
+
+    .table-container th,
+    .table-container td {
+     padding: 10px 6px;
+     white-space: normal; /* permite que el texto se divida en móviles */
+    }
+  }
 
     /* FOOTER */
     footer {
