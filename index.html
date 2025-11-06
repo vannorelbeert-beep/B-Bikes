@@ -258,17 +258,29 @@
         width: 45%;
         white-space: nowrap;
       }
-    }
-      .table-container {
-      overflow-x: auto;
-      margin: 0 auto;
-      width: 95%;
-    }
+      /* --- Tabla responsive --- */
+        .table-container {
+        overflow-x: auto;
+        margin: 30px auto;
+        width: 95%;
+      }
 
-      .table-container table {
-      width: 100%;
-      border-collapse: collapse;
-      min-width: 400px;
+       .table-container table {
+       width: 100%;
+       border-collapse: collapse;
+       color: #fff;
+       min-width: 400px;
+      }
+
+      .table-container th,
+      .table-container td {
+      padding: 12px;
+      border: 1px solid #fff;
+      }
+
+      .table-container thead tr {
+      background: rgba(255,255,255,0.2);
+      }
     }
   </style>
 </head>
@@ -324,21 +336,35 @@
       <h2>Tarifas</h2>
       <p>En B-BIKES ofrecemos precios justos y transparentes para todos nuestros servicios.</p>
 
-      <table>
       <div class="table-container">
-        <thead>
-          <tr>
-            <th>Servicio</th>
-            <th>Precio</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Pack Mantenimiento Básico</td><td>40€, E-Bike 50€</td></tr>
-          <tr><td>Pack Mantenimiento General</td><td>80€, E-Bike 90€</td></tr>
-          <tr><td>Pack Mantenimiento Completo</td><td>120€, E-Bike 145€</td></tr>
-          <tr><td>Recogida y entrega a domicilio</td><td>23€ (Barcelona ciudad)</td></tr>
-        </tbody>
-      </table>
+  <table>
+    <thead>
+      <tr>
+        <th>Servicio</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Pack Mantenimiento Básico</td>
+        <td>40€, E-Bike 50€</td>
+      </tr>
+      <tr>
+        <td>Pack Mantenimiento General</td>
+        <td>80€, E-Bike 90€</td>
+      </tr>
+      <tr>
+        <td>Pack Mantenimiento Completo</td>
+        <td>120€, E-Bike 145€</td>
+      </tr>
+      <tr>
+        <td>Recogida y entrega a domicilio</td>
+        <td>23€ (Barcelona ciudad)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
       <a href="#contacto" class="btn">Solicita tu presupuesto</a>
     </section>
 
