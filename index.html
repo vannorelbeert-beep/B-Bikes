@@ -198,45 +198,48 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.6);
     }
 
-    /* --- Tabla responsive mejorada --- */
-    .table-container {
-      width: 100%;
-      overflow-x: auto;
-      margin: 30px auto;
-    }
+    /* --- Tabla responsive (2 columnas fijas) --- */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin: 30px auto;
+}
 
-    .table-container table {
-     width: 100%;
-     border-collapse: collapse;
-     color: #fff;
-     font-size: 1em;
-     min-width: 380px; /* evita romper estructura */
-    }
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #fff;
+  font-size: 1em;
+  min-width: 480px; /* asegura que las 2 columnas se mantengan */
+}
 
-    .table-container th,
-    .table-container td {
-     padding: 12px 10px;
-     border: 1px solid #fff;
-     text-align: left;
-     white-space: nowrap; /* evita cortes feos en textos */
-    }
+.table-container th,
+.table-container td {
+  padding: 12px 10px;
+  border: 1px solid #fff;
+  text-align: left;
+  vertical-align: top;
+}
 
-    .table-container thead {
-     background: rgba(255,255,255,0.2);
-    }
+.table-container thead {
+  background: rgba(255,255,255,0.2);
+}
 
-    /* En pantallas pequeñas, los textos se adaptan */
-    @media (max-width: 600px) {
-    .table-container table {
-     font-size: 0.9em;
-    }
-
-    .table-container th,
-    .table-container td {
-     padding: 10px 6px;
-     white-space: normal; /* permite que el texto se divida en móviles */
-    }
+@media (max-width: 600px) {
+  .table-container {
+    margin: 20px auto;
   }
+
+  .table-container table {
+    font-size: 0.9em;
+  }
+
+  .table-container th,
+  .table-container td {
+    padding: 10px 8px;
+  }
+}
+
 
     /* FOOTER */
     footer {
