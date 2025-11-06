@@ -198,19 +198,20 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.6);
     }
 
-    /* --- Tabla responsive (2 columnas fijas) --- */
+/* --- Tabla siempre con 2 columnas visibles --- */
 .table-container {
   width: 100%;
   overflow-x: auto;
   margin: 30px auto;
+  -webkit-overflow-scrolling: touch; /* desplazamiento suave en móviles */
 }
 
 .table-container table {
-  width: 100%;
+  width: 600px; /* ancho fijo mínimo para mantener dos columnas */
   border-collapse: collapse;
   color: #fff;
   font-size: 1em;
-  min-width: 480px; /* asegura que las 2 columnas se mantengan */
+  margin: 0 auto;
 }
 
 .table-container th,
@@ -219,24 +220,21 @@
   border: 1px solid #fff;
   text-align: left;
   vertical-align: top;
+  white-space: nowrap; /* evita que el texto se divida */
 }
 
 .table-container thead {
   background: rgba(255,255,255,0.2);
 }
 
+/* En móviles, la tabla puede desplazarse horizontalmente */
 @media (max-width: 600px) {
   .table-container {
-    margin: 20px auto;
+    overflow-x: scroll;
   }
 
   .table-container table {
-    font-size: 0.9em;
-  }
-
-  .table-container th,
-  .table-container td {
-    padding: 10px 8px;
+    width: 550px; /* mantiene las 2 columnas */
   }
 }
 
